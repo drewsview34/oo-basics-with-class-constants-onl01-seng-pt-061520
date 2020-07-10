@@ -6,7 +6,12 @@ class Shoe
 
   def initialize(brand)
     @brand = brand
-    BRANDS.uniq << brand
+    #BRANDS << brand unless BRANDS.include?(brand)
+    BRANDS.each do |brand_in_array|
+      if brand_in_array == brand
+        BRANDS << brand
+      end 
+    end
   end
 
   def cobble
